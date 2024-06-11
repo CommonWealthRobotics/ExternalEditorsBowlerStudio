@@ -1,0 +1,34 @@
+{
+"Linux-x64":{
+				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"eclipse-java-2024-03-R-linux-gtk-x86_64"
+			  },
+"Linux-aarch64":{
+				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+			 ,
+			  "type":"tar.gz",
+			  "name":"eclipse-java-2024-03-R-linux-gtk-aarch64"
+			  
+			  },
+"Windows-x64":{
+				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+			  ,
+			  "type":"zip",
+			  "name":"eclipse-java-2024-03-R-win32-x86_64"
+			  },
+"Mac-x64":{
+				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"eclipse-java-2024-03-R-macosx-cocoa-x86_64"
+			  },
+"Mac-aarch64":{
+				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"eclipse-java-2024-03-R-macosx-cocoa-aarch64"
+			  }			  
+
+}
