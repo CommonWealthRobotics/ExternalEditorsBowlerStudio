@@ -3,32 +3,36 @@
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
-			  "name":"eclipse-java-2024-03-R-linux-gtk-x86_64"
+			  "name":"eclipse-java-2024-03-R-linux-gtk-x86_64",
+			  "executable":"eclipse/eclipse"
 			  },
 "Linux-aarch64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			 ,
 			  "type":"tar.gz",
-			  "name":"eclipse-java-2024-03-R-linux-gtk-aarch64"
-			  
+			  "name":"eclipse-java-2024-03-R-linux-gtk-aarch64",
+			  "executable":"eclipse/eclipse"
 			  },
 "Windows-x64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"zip",
-			  "name":"eclipse-java-2024-03-R-win32-x86_64"
+			  "name":"eclipse-java-2024-03-R-win32-x86_64",
+			  "executable":"eclipse/eclipse.exe"
 			  },
 "Mac-x64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
-			  "name":"eclipse-java-2024-03-R-macosx-cocoa-x86_64"
+			  "name":"eclipse-java-2024-03-R-macosx-cocoa-x86_64",
+			  "executable":"eclipse/eclipse"
 			  },
 "Mac-aarch64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
-			  "name":"eclipse-java-2024-03-R-macosx-cocoa-aarch64"
+			  "name":"eclipse-java-2024-03-R-macosx-cocoa-aarch64",
+			  "executable":"eclipse/eclipse"
 			  }			  
 
 }
