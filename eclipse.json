@@ -47,14 +47,14 @@
 			  ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-macosx-cocoa-x86_64",
-			  "executable":"eclipse/eclipse"
+			  "executable":"Eclipse.app/Contents/MacOS/eclipse"
 			  },
 "Mac-aarch64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-macosx-cocoa-aarch64",
-			  "executable":"eclipse/eclipse"
+			  "executable":"Eclipse.app/Contents/MacOS/eclipse"
 			  }			  
 
 }
