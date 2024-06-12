@@ -1,10 +1,32 @@
 {
+"Meta-Configuration":[
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.platform.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.jdt.core.manipulation",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.jdt.ui",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.jdt.debug.ui",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.jdt.junit",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.ui.browser",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.ant.core",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2024-03 -installIU org.eclipse.jdt.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.eclipse.astviews",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.jdt.patch.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.compilerless.feature.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.headless.feature.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.eclipse.feature.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy.eclipse",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy40.feature.feature.group",
+  "-nosplash -application org.eclipse.equinox.p2.director -repository https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31 -installIU org.codehaus.groovy30.feature.feature.group"
+],
 "Linux-x64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-linux-gtk-x86_64",
-			  "executable":"eclipse/eclipse"
+			  "executable":"eclipse/eclipse",
+			  "environment":{
+				"WEBKIT_DISABLE_DMABUF_RENDERER":"1"
+			  	}
 			  },
 "Linux-aarch64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
