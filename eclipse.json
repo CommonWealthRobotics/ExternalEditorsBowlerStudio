@@ -24,6 +24,7 @@
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-linux-gtk-x86_64",
 			  "executable":"eclipse/eclipse",
+			  "configExecutable":"eclipse/eclipse",
 			  "environment":{
 				"WEBKIT_DISABLE_DMABUF_RENDERER":"1"
 			  	}
@@ -33,28 +34,35 @@
 			 ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-linux-gtk-aarch64",
-			  "executable":"eclipse/eclipse"
+			  "executable":"eclipse/eclipse",
+			  "configExecutable":"eclipse/eclipse",
+			  "environment":{
+				"WEBKIT_DISABLE_DMABUF_RENDERER":"1"
+			  	}
 			  },
 "Windows-x64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"zip",
 			  "name":"eclipse-java-2024-03-R-win32-x86_64",
-			  "executable":"eclipse/eclipse.exe"
+			  "executable":"eclipse/eclipse.exe",
+			  "configExecutable":"eclipse/eclipsec.exe"
 			  },
 "Mac-x64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-macosx-cocoa-x86_64",
-			  "executable":"Eclipse.app/Contents/MacOS/eclipse"
+			  "executable":"Eclipse.app",
+			  "configExecutable":"Eclipse.app/Contents/MacOS/eclipse"
 			  },
 "Mac-aarch64":{
 				"url":"https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
 			  ,
 			  "type":"tar.gz",
 			  "name":"eclipse-java-2024-03-R-macosx-cocoa-aarch64",
-			  "executable":"Eclipse.app/Contents/MacOS/eclipse"
+			  "executable":"Eclipse.app",
+			  "configExecutable":"Eclipse.app/Contents/MacOS/eclipse"
 			  }			  
 
 }
