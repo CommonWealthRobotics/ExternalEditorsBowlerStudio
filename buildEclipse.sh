@@ -52,7 +52,9 @@ if ! test -f $LOCATION; then
   echo "$LOCATION File does not exist."
   case "${TYPE}" in
     Windows*)       EXTRACT="7z  $PACKAGE -o$LOCATION";;
-    *)              EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
+    Linux*)         EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
+    Mac*)           EXTRACT="tar -xvzf $PACKAGE -C $LOCATION;";;
+    
   esac
   mkdir -p $LOCATION
   echo $EXTRACT
