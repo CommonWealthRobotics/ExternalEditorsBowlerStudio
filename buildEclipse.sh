@@ -19,6 +19,8 @@ TYPE=${machine}"-"$ARCH
 echo ${TYPE}
 
 BASEURL="https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+GROOVYVERSION=https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31
+ECLIPSEUPDATE=https://download.eclipse.org/releases/2024-03
 
 case "${TYPE}" in
     Linux-x86_64*)       BASEFILE="eclipse-java-2024-03-R-linux-gtk-x86_64";EXTENTION="tar.gz";;
@@ -55,39 +57,39 @@ if ! test -f $LOCATION; then
   mkdir -p $LOCATION
   echo $EXTRACT
   eval $EXTRACT
+  MYECLIPSE=$LOCATION/eclipse    
+  set -e
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.ui 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.debug.ui 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.junit 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.headless.feature.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.feature.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy40.feature.feature.group    
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy30.feature.feature.group 
   
 else
 	echo "$LOCATION exists"
 fi
 
-MYECLIPSE=$LOCATION/eclipse    
-set -e
+
 #https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository 
 # WHat groovy plugin goes with which eclipse install
 #https://github.com/groovy/groovy-eclipse/wiki#how-to-install
 
-GROOVYVERSION=https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31
-ECLIPSEUPDATE=https://download.eclipse.org/releases/2024-03
+
 
 # org.eclipse.jdt.core.manipulation
 #if false; then
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.ui 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.debug.ui 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.junit 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.headless.feature.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.feature.feature.group 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy 
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy40.feature.feature.group    
-$MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy30.feature.feature.group 
 #fi
 
 #rm -rf importThis
