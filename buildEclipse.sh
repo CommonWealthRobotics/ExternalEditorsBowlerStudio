@@ -59,6 +59,7 @@ if ! test -f $LOCATION; then
   mkdir -p $LOCATION
   echo $EXTRACT
   eval $EXTRACT
+  ls -al $LOCATION
       
   case "${TYPE}" in
     Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
