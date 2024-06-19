@@ -88,7 +88,7 @@ if ! test -f $LOCATION; then
 else
 	echo "$LOCATION exists"
 fi
-rm -ef release
+rm -rf release
 mkdir -p release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
