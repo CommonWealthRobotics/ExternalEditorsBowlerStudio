@@ -51,13 +51,18 @@ fi
 if ! test -f $LOCATION; then
   echo "$LOCATION File does not exist."
   case "${TYPE}" in
-    Windows*)       EXTRACT="7z x $PACKAGE -o$LOCATION";;
+    Windows*)       EXTRACT="7z  $PACKAGE -o$LOCATION";;
     *)              EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
   esac
   mkdir -p $LOCATION
   echo $EXTRACT
   eval $EXTRACT
-  MYECLIPSE=$LOCATION/eclipse    
+      
+  case "${TYPE}" in
+    Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
+    Mac*)                MYECLIPSE=$LOCATION/Eclipse.app/Contents/MacOS/eclipse;;
+    Windows-x86_64*)     MYECLIPSE=$LOCATION/eclipse.exe;;
+  esac
   set -e
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group 
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation 
