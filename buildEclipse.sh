@@ -4,6 +4,7 @@
 # org.codehaus.groovy.eclipse.feature.feature.group
 # 5.1.0.v202309291928-e2306
 # Pivotal Software, Inc.
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -88,15 +89,15 @@ if ! test -d $LOCATION; then
 else
 	echo "$LOCATION exists"
 fi
-rm -rf release
-mkdir -p release
+rm -rf $SCRIPT_DIR/release
+mkdir -p $SCRIPT_DIR/release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       MKPKG="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
-    *)              MKPKG="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
+    Windows*)       MKPKG="7z a $SCRIPT_DIR/release/$NAME-$TYPE.zip $LOCATION/ ";;
+    *)              MKPKG="cd $DOWNDIR;tar czf $SCRIPT_DIR/release/$NAME-$TYPE.tar.gz $BASEFILE/;cd ..";;
 esac
 echo "$MKPKG"
 eval "$MKPKG"
 ls -al .
-ls -al release/
+ls -al $SCRIPT_DIR/release
 
