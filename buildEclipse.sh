@@ -64,7 +64,7 @@ if ! test -f $LOCATION; then
   case "${TYPE}" in
     Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
     Mac*)                MYECLIPSE=$LOCATION/Eclipse.app/Contents/MacOS/eclipse;;
-    Windows-x86_64*)     MYECLIPSE=$LOCATION/eclipse.exe;;
+    Windows-x86_64*)     MYECLIPSE=$LOCATION/eclipsec.exe;;
   esac
   set -e
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group 
@@ -92,9 +92,11 @@ rm -rf release
 mkdir -p release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       EXTRACT="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
-    *)              EXTRACT="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
+    Windows*)       COMPRESS="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
+    *)              COMPRESS="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
+  echo $COMPRESS
+  eval $COMPRESS
 esac
 ls -al .
-la -al release/
+ls -al release/
 
