@@ -80,28 +80,12 @@ if ! test -f $LOCATION; then
 else
 	echo "$LOCATION exists"
 fi
+rm -ef release
+mkdir -p release
+NAME=Eclipse-Groovy
+case "${TYPE}" in
+    Windows*)       EXTRACT="7z a release/$NAME-$TYPE.zip $LOCATION/ ";;
+    *)              EXTRACT="tar czf release/$NAME-$TYPE.tar.gz $LOCATION/;";;
+esac
 
 
-#https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository 
-# WHat groovy plugin goes with which eclipse install
-#https://github.com/groovy/groovy-eclipse/wiki#how-to-install
-
-
-
-# org.eclipse.jdt.core.manipulation
-#if false; then
-#fi
-
-#rm -rf importThis
-#mkdir -p importThis
-#cp jvm.epf  importThis/
-
-#sed -i -e 's/MY_JVM_LOCATION/\/home\/hephaestus\/bin\/BowlerStudioInstall\/zulu8.78.0.19-ca-fx-jdk8.0.412-linux_x64/g' importThis/jvm.epf
-#sed -i -e 's/MY_WORKSPACE/\/home\/hephaestus\/Documents\/bowler-workspace\/eclipse-workplace/g' importThis/jvm.epf
-
-#$MYECLIPSE -data /home/hephaestus/Documents/bowler-workspace/eclipse-workspace -vmargs -Dorg.eclipse.equinox.p2.reconciler.dropins.directory=importThis/ 
-
-#$MYECLIPSE -application org.eclipse.equinox.p2.director -nosplash  -data importThis/ -vmargs -Dorg.eclipse.equinox.p2.reconciler.dropins.directory=$LOCATION/dropins/
-
-     
-#$MYECLIPSE -data /home/hephaestus/Documents/bowler-workspace/eclipse-workspace
