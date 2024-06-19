@@ -4,7 +4,62 @@
 # org.codehaus.groovy.eclipse.feature.feature.group
 # 5.1.0.v202309291928-e2306
 # Pivotal Software, Inc.
-LOCATION=/home/hephaestus/bin/BowlerStudioInstall/eclipse-java-2024-03-R-linux-gtk-x86_64/eclipse/
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    *)          machine="Windows";;
+esac
+ARCH="x86_64"
+if [[ $(uname -m) == 'arm64' ]]; then
+  ARCH="arm64"
+fi
+TYPE=${machine}"-"$ARCH
+echo ${TYPE}
+
+BASEURL="https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
+
+case "${TYPE}" in
+    Linux-x86_64*)       BASEFILE="eclipse-java-2024-03-R-linux-gtk-x86_64";EXTENTION="tar.gz";;
+    Mac-x86_64*)         BASEFILE="eclipse-java-2024-03-R-macosx-cocoa-x86_64";EXTENTION="tar.gz";;
+    Mac-arm64*)          BASEFILE="eclipse-java-2024-03-R-macosx-cocoa-aarch64";EXTENTION="tar.gz";;
+    Windows-x86_64*)     BASEFILE="eclipse-java-2024-03-R-win32-x86_64";EXTENTION="zip";;
+esac
+URL=$BASEURL""$BASEFILE"."$EXTENTION
+echo Downloading $URL
+DOWNDIR=$HOME/bin/BowlerStudioInstall/
+mkdir -p $DOWNDIR
+PACKAGE=$DOWNDIR""$BASEFILE"."$EXTENTION
+LOCATION=$DOWNDIR""$BASEFILE
+
+if ! test -f $PACKAGE; then
+  echo "$PACKAGE File does not exist."
+  case "${TYPE}" in
+    Linux-x86_64*)       DOWNLOAD="wget $URL -O $PACKAGE";;
+    Mac-x86_64*)         DOWNLOAD="wget $URL -O $PACKAGE";;
+    Mac-arm64*)          DOWNLOAD="wget $URL -O $PACKAGE";;
+    Windows-x86_64*)     DOWNLOAD="curl $URL -o $PACKAGE";;
+  esac
+  echo $DOWNLOAD
+  eval $DOWNLOAD
+else
+	echo "$PACKAGE exists"
+fi
+if ! test -f $LOCATION; then
+  echo "$LOCATION File does not exist."
+  case "${TYPE}" in
+    Windows*)       EXTRACT="7z x $PACKAGE -o$LOCATION";;
+    *)              EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
+  esac
+  mkdir -p $LOCATION
+  echo $EXTRACT
+  eval $EXTRACT
+  
+else
+	echo "$LOCATION exists"
+fi
+
 MYECLIPSE=$LOCATION/eclipse    
 set -e
 #https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository 
@@ -13,8 +68,6 @@ set -e
 
 GROOVYVERSION=https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31
 ECLIPSEUPDATE=https://download.eclipse.org/releases/2024-03
-BOWLER_VM=/home/hephaestus/bin/BowlerStudioInstall/zulu8.78.0.19-ca-fx-jdk8.0.412-linux_x64
-WORKSPACE=/home/hephaestus/Documents/bowler-workspace/eclipse-workspace
 
 # org.eclipse.jdt.core.manipulation
 #if false; then
@@ -49,4 +102,4 @@ $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $
 #$MYECLIPSE -application org.eclipse.equinox.p2.director -nosplash  -data importThis/ -vmargs -Dorg.eclipse.equinox.p2.reconciler.dropins.directory=$LOCATION/dropins/
 
      
-$MYECLIPSE -data /home/hephaestus/Documents/bowler-workspace/eclipse-workspace
+#$MYECLIPSE -data /home/hephaestus/Documents/bowler-workspace/eclipse-workspace
