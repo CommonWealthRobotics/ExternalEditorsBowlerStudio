@@ -48,7 +48,7 @@ if ! test -f $PACKAGE; then
 else
 	echo "$PACKAGE exists"
 fi
-if ! test -f $LOCATION; then
+if ! test -d $LOCATION; then
   echo "$LOCATION File does not exist."
   case "${TYPE}" in
     Windows*)       EXTRACT="7z x $PACKAGE -y -o$LOCATION;mv $LOCATION/eclipse/* $LOCATION/";;
@@ -92,11 +92,11 @@ rm -rf release
 mkdir -p release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       COMPRESS="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
-    *)              COMPRESS="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
-  echo $COMPRESS
-  eval $COMPRESS
+    Windows*)       MKPKG="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
+    *)              MKPKG="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
 esac
+echo "$MKPKG"
+eval "$MKPKG"
 ls -al .
 ls -al release/
 
