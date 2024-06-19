@@ -51,7 +51,7 @@ fi
 if ! test -f $LOCATION; then
   echo "$LOCATION File does not exist."
   case "${TYPE}" in
-    Windows*)       EXTRACT="7z e $PACKAGE -o$LOCATION";;
+    Windows*)       EXTRACT="7z x $PACKAGE -y -o$LOCATION;mv $LOCATION/eclipse/* $LOCATION/";;
     Linux*)         EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
     Mac*)           EXTRACT="tar -xvzf $PACKAGE -C $LOCATION;";;
     
