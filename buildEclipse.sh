@@ -92,8 +92,9 @@ rm -rf release
 mkdir -p release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       EXTRACT="7z a release/$NAME-$TYPE.zip $LOCATION/ ";;
-    *)              EXTRACT="tar czf release/$NAME-$TYPE.tar.gz $LOCATION/;";;
+    Windows*)       EXTRACT="7z a ./release/$NAME-$TYPE.zip $LOCATION/ ";;
+    *)              EXTRACT="tar czf ./release/$NAME-$TYPE.tar.gz $LOCATION/;";;
 esac
-
+ls -al .
+la -al release/
 
