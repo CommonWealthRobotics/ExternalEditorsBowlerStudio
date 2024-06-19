@@ -93,7 +93,7 @@ rm -rf $SCRIPT_DIR/release
 mkdir -p $SCRIPT_DIR/release
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       MKPKG="7z a $SCRIPT_DIR/release/$NAME-$TYPE.zip $LOCATION/ ";;
+    Windows*)       MKPKG="7z a $SCRIPT_DIR/release/$NAME-$TYPE.zip $LOCATION/* ";;
     *)              MKPKG="cd $DOWNDIR;tar czf $SCRIPT_DIR/release/$NAME-$TYPE.tar.gz $BASEFILE/;cd ..";;
 esac
 echo "$MKPKG"
