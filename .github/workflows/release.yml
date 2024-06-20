@@ -145,8 +145,8 @@ jobs:
                GITHUB_TOKEN: ${{ github.token }}
         with:
                upload_url: ${{ steps.create_release.outputs.upload_url }}
-               asset_path: Eclipse-Groovy-MacOS-x86_64.tar.gz
-               asset_name: Eclipse-Groovy-MacOS-x86_64.tar.gz
+               asset_path: Eclipse-Groovy-Mac-x86_64.tar.gz
+               asset_name: Eclipse-Groovy-Mac-x86_64.tar.gz
                asset_content_type: application/octet-stream 
       - name: upload MacOS dmg arm
         uses: actions/upload-release-asset@v1
@@ -154,6 +154,7 @@ jobs:
                GITHUB_TOKEN: ${{ github.token }}
         with:
                upload_url: ${{ steps.create_release.outputs.upload_url }}
-               asset_path: Eclipse-Groovy-MacOS-arm64.tar.gz
-               asset_name: Eclipse-Groovy-MacOS-arm64.tar.gz
+               asset_path: Eclipse-Groovy-Mac-arm64.tar.gz
+               asset_name: Eclipse-Groovy-Mac-arm64.tar.gz
                asset_content_type: application/octet-stream 
+
