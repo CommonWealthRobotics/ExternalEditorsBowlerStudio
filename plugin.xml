@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-<plugin
->
-   <extension point="org.eclipse.ui.startup">
-   <startup class="com.commonwealthrobotics.PreferenceImporterFromEnv"/>
-</extension>
-
-
+<?eclipse version="3.4"?>
+<plugin>
+	<!-- Plugin ID, name, and version -->
+	<extension-point id="org.eclipse.ui.startup" name="Early Startup" schema="schema/org.eclipse.ui.startup.exsd"/>
+	<extension point="org.eclipse.ui.startup">
+	   <startup class="com.commonwealthrobotics.PreferenceImporterFromEnv">
+	   </startup>
+	</extension>
 </plugin>
