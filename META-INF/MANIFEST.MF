@@ -1,8 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EclipsePreferencesLoading
-Bundle-SymbolicName: EclipsePreferencesLoading
+Bundle-SymbolicName: EclipsePreferencesLoading;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime;bundle-version="3.31.0"
 Bundle-Vendor: CommonWealthRobotics
 Automatic-Module-Name: EclipsePreferencesLoading
 Bundle-RequiredExecutionEnvironment: JavaSE-17
