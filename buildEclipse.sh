@@ -32,35 +32,35 @@ esac
 URL=$BASEURL""$BASEFILE"."$EXTENTION
 echo Downloading $URL
 DOWNDIR=$HOME/bin/BowlerStudioInstall/
-mkdir -p $DOWNDIR
+mkdir -p "$DOWNDIR"
 PACKAGE=$DOWNDIR""$BASEFILE"."$EXTENTION
 LOCATION=$DOWNDIR""$BASEFILE
 
-if ! test -f $PACKAGE; then
+if ! test -f "$PACKAGE"; then
   echo "$PACKAGE File does not exist."
   case "${TYPE}" in
     Linux-x86_64*)       DOWNLOAD="wget $URL -O $PACKAGE";;
     Mac-x86_64*)         DOWNLOAD="wget $URL -O $PACKAGE";;
     Mac-arm64*)          DOWNLOAD="wget $URL -O $PACKAGE";;
-    Windows-x86_64*)     DOWNLOAD="curl $URL -o $PACKAGE";;
+    Windows-x86_64*)     DOWNLOAD="curl $URL -o \"$PACKAGE\"";;
   esac
-  echo $DOWNLOAD
-  eval $DOWNLOAD
+  echo "$DOWNLOAD"
+  eval "$DOWNLOAD"
 else
 	echo "$PACKAGE exists"
 fi
-if ! test -d $LOCATION; then
+if ! test -d "$LOCATION"; then
   echo "$LOCATION File does not exist."
   case "${TYPE}" in
-    Windows*)       EXTRACT="7z x $PACKAGE -y -o$LOCATION;mv $LOCATION/eclipse/* $LOCATION/";;
+    Windows*)       EXTRACT="7z x \"$PACKAGE\" -y -o\"$LOCATION\";mv \"$LOCATION/eclipse/\"* \"$LOCATION/\"";;
     Linux*)         EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
     Mac*)           EXTRACT="tar -xvzf $PACKAGE -C $LOCATION;";;
     
   esac
-  mkdir -p $LOCATION
-  echo $EXTRACT
-  eval $EXTRACT
-  ls -al $LOCATION
+  mkdir -p "$LOCATION"
+  echo "$EXTRACT"
+  eval "$EXTRACT"
+  ls -al "$LOCATION"
       
   case "${TYPE}" in
     Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
@@ -76,6 +76,8 @@ if ! test -d $LOCATION; then
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser 
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core 
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group 
+  $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.pde.feature.group
+
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews 
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group 
   $MYECLIPSE  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group 
@@ -89,16 +91,16 @@ if ! test -d $LOCATION; then
 else
 	echo "$LOCATION exists"
 fi
-rm -rf $SCRIPT_DIR/release
-mkdir -p $SCRIPT_DIR/release
+rm -rf "$SCRIPT_DIR/release"
+mkdir -p "$SCRIPT_DIR/release"
 NAME=Eclipse-Groovy
 case "${TYPE}" in
-    Windows*)       MKPKG="7z a $SCRIPT_DIR/release/$NAME-$TYPE.zip $LOCATION/* ";;
+    Windows*)       MKPKG="7z a \"$SCRIPT_DIR/release/$NAME-$TYPE.zip\" \"$LOCATION/\"* ";;
     Mac*)          MKPKG="cd $LOCATION/; xattr -cr Eclipse.app; zip -r $SCRIPT_DIR/release/$NAME-$TYPE.zip Eclipse.app; cd $SCRIPT_DIR";;
     Linux*)         MKPKG="cd $DOWNDIR/$BASEFILE;tar czf $SCRIPT_DIR/release/$NAME-$TYPE.tar.gz * ;cd $SCRIPT_DIR";;
 esac
 echo "$MKPKG"
 eval "$MKPKG"
 ls -al .
-ls -al $SCRIPT_DIR/release
+ls -al "$SCRIPT_DIR/release"
 
