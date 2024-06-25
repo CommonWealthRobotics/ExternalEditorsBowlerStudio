@@ -38,7 +38,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 			IPreferencesService service = Platform.getPreferencesService();
 			FileInputStream inputStream = new FileInputStream(epfFile);
 			
-			//service.importPreferences(inputStream);
+			service.importPreferences(inputStream);
 			inputStream.close();
 
 			// Force save of imported preferences
