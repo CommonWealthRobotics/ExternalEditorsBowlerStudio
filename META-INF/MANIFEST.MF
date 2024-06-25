@@ -8,3 +8,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: CommonWealthRobotics
 Automatic-Module-Name: EclipsePreferencesLoading
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: com.commonwealthrobotics.PreferenceImporterFromEnv
+

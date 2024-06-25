@@ -11,7 +11,15 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.BundleContext;
 public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStartup {
+    public static final String PLUGIN_ID = "com.commonwealthrobotics.PreferenceImporterFromEnv";
+    @Override
+    public void start(BundleContext context) throws Exception {
+        super.start(context);
+        log("PreferenceImporterFromEnv started");
+    }
+
 	@Override
 	public void earlyStartup() {
 		String epfPath = System.getenv("ECLIPSE_PREFERENCE_FILE").strip();
