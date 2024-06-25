@@ -42,6 +42,7 @@ public class PreferenceImporterFromEnv implements IStartup {
 			// Force save of imported preferences
 			IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.ui.workbench");
 			prefs.flush();
+			System.out.println("Loaded Preferences from "+epfFile.getAbsolutePath());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

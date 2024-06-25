@@ -1,4 +1,4 @@
-#Mon Jun 24 19:21:08 PDT 2024
+#Mon Jun 24 19:45:53 PDT 2024
 \!/=
 /configuration/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 /configuration/org.eclipse.ui.ide/MAX_RECENT_WORKSPACES=10
@@ -28,7 +28,6 @@
 /instance/org.eclipse.buildship.core/jvm.arguments=
 /instance/org.eclipse.buildship.core/show.console.view=true
 /instance/org.eclipse.buildship.core/show.executions.view=true
-/instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 /instance/org.eclipse.core.resources/encoding=UTF-8
 /instance/org.eclipse.core.resources/version=1
 /instance/org.eclipse.egit.core/GitRepositoriesView.GitDirectories=
@@ -56,7 +55,8 @@
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=warning
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.release=disabled
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.8
-/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1719281904775">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1719281902285" name\="jre" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\eclipse-java-2024-03-R-win32-x86_64\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\\jre"/>\r\n        <vm id\="1719281904775" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="java8_FX" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64"/>\r\n    </vmType>\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1719281902285" name\="jre" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\eclipse-java-2024-03-R-win32-x86_64\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\\jre"/>\r\n        <vm id\="1719281904775" name\="java8_FX" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64"/>\r\n    </vmType>\r\n</vmSettings>\r\n
+/instance/org.eclipse.jdt.launching/detectVMsAtStartup=true
+/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1719283483491">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1719280752090" name\="jre" path\="C\:\\Users\\Kevin Bad Name\\Documents\\eclipse\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\\jre"/>\r\n        <vm id\="1719283483491" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="java8" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64"/>\r\n    </vmType>\r\n</vmSettings>\r\n
 /instance/org.eclipse.jdt.ui/content_assist_proposals_background=255,255,255
 /instance/org.eclipse.jdt.ui/content_assist_proposals_foreground=0,0,0
 /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.exception.name=e
@@ -99,7 +99,6 @@
 /instance/org.eclipse.ui/showIntro=false
 @org.codehaus.groovy.eclipse.ui=5.4.0.v202406071830-e2403
 @org.eclipse.buildship.core=3.1.9.v20240115-1636
-@org.eclipse.core.net=1.5.300.v20231214-1526
 @org.eclipse.core.resources=3.20.100.v20240209-1706
 @org.eclipse.egit.core=6.9.0.202403050737-r
 @org.eclipse.jdt.core=3.37.0.v202406071830-e2403
