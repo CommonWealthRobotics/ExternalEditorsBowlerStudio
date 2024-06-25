@@ -1,4 +1,4 @@
-#Mon Jun 24 19:45:53 PDT 2024
+#Tue Jun 25 13:04:09 PDT 2024
 \!/=
 /configuration/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 /configuration/org.eclipse.ui.ide/MAX_RECENT_WORKSPACES=10
@@ -56,7 +56,7 @@
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.release=disabled
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.8
 /instance/org.eclipse.jdt.launching/detectVMsAtStartup=true
-/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1719283483491">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1719280752090" name\="jre" path\="C\:\\Users\\Kevin Bad Name\\Documents\\eclipse\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\\jre"/>\r\n        <vm id\="1719283483491" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="java8" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64"/>\r\n    </vmType>\r\n</vmSettings>\r\n
+/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType86,C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1719280752090" name\="jre" path\="C\:\\Users\\Kevin Bad Name\\Documents\\eclipse\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\\jre"/>\r\n        <vm id\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64" name\="zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64" path\="C\:\\Users\\Kevin Bad Name\\bin\\BowlerStudioInstall\\zulu8.78.0.19-ca-fx-jdk8.0.412-win_x64"/>\r\n    </vmType>\r\n</vmSettings>\r\n
 /instance/org.eclipse.jdt.ui/content_assist_proposals_background=255,255,255
 /instance/org.eclipse.jdt.ui/content_assist_proposals_foreground=0,0,0
 /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.exception.name=e
@@ -90,6 +90,7 @@
 /instance/org.eclipse.ui.ide/quickStart=false
 /instance/org.eclipse.ui.ide/tipsAndTricks=true
 /instance/org.eclipse.ui.workbench/PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+/instance/org.eclipse.ui.workbench/RESOURCE_RENAME_MODE=inline
 /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_END=255,255,255
 /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_START=255,255,255
 /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_TEXT_COLOR=16,16,16
