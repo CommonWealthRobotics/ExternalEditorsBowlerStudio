@@ -1,13 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: EclipsePreferencesLoading
-Bundle-SymbolicName: EclipsePreferencesLoading;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Name: Eclipse Preferences Loading From Environement
+Bundle-SymbolicName: com.commonwealthrobotics;singleton:=true
+Bundle-Version: 1.0.1.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime;bundle-version="3.31.0"
 Bundle-Vendor: CommonWealthRobotics
 Automatic-Module-Name: EclipsePreferencesLoading
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Bundle-ActivationPolicy: lazy
-Bundle-Activator: com.commonwealthrobotics.PreferenceImporterFromEnv
 
