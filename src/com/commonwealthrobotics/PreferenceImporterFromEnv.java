@@ -107,7 +107,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 	}
 
 	private void log(String x) {
-		System.out.println(x);
+		System.err.println(x);
 		getLog().log(new Status(IStatus.INFO, PreferenceImporterFromEnv.class, x));
 	}
 }
