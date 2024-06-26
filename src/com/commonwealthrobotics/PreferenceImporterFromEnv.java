@@ -67,25 +67,63 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 		try {
 			IPreferencesService service = Platform.getPreferencesService();
 			
-			Preferences preferences = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.core");
-			String compilerVersion = preferences.get("org.eclipse.jdt.core.compiler.compliance", "UNKNOWN");
-			String targetCompliance = "1.8";
+			boolean newConf=false;
 			try {
 				Scanner scanner = new Scanner(epfFile);
 				// now read the file line by line...
 				while (scanner.hasNextLine()) {
 					String line = scanner.nextLine();
-					if(line.contains("org.eclipse.jdt.core.compiler.compliance")) {
-						targetCompliance=line.split("=")[1];
-						scanner.close();
-						break;
+					if(line.startsWith("/")) {
+						line=line.substring(1);
+						//String type  = line.substring(0, line.indexOf("/"));
+						String rest = line.substring(line.indexOf("/")+1);
+						String node = rest.substring(0, rest.indexOf("/"));
+						String kevalue = rest.substring(rest.indexOf("/")+1);
+						String key =kevalue.substring(0, kevalue.indexOf("="));
+						String value = kevalue.substring(kevalue.indexOf("=")+1);
+						Preferences preferences = InstanceScope.INSTANCE.getNode(node);
+						String data = preferences.get(key, "UNKNOWN");
+						if(value.length()==0) {
+							continue;
+						}
+						if(data.contentEquals("UNKNOWN")) {
+							continue;
+						}
+						// if either the values are files, just skip the check because of escape values not linig up
+						try {
+							if(new File(value).exists())
+								continue;
+						}catch(Throwable t) {
+							//ignore
+						}
+						try {
+							if(new File(data).exists())
+								continue;
+						}catch(Throwable t) {
+							//ignore
+						}
+						if(key.endsWith("XML"))
+							continue;// XML can not be checked like this
+						if(value.startsWith("<?xml"))
+							continue;//check for any xml content
+						if(key.contentEquals("platformState"))
+							continue;// this is always changing
+						if(data.contentEquals(value)) {
+							System.err.println(key+" is set to "+value);
+
+						}else {
+							log(key+" is not set to "+value+" instead was found to be "+data);
+							newConf=true;
+							break;
+						}
 					}
+
 				}
 				scanner.close();
 			} catch (FileNotFoundException e) {
 				// handle this
 			}
-			if(!compilerVersion.contains(targetCompliance)) {
+			if(newConf) {
 				FileInputStream inputStream = new FileInputStream(epfFile);
 				
 				service.importPreferences(inputStream);
@@ -98,7 +136,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 				log(x);
 				promptForRestart();
 			}else {
-				log("Preferences are already set, JVM version is "+compilerVersion);
+				log("Preferences are all already set");
 			}
 
 		} catch (Exception e) {
