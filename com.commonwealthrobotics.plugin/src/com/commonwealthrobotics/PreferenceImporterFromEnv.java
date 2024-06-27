@@ -75,8 +75,9 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 				while (scanner.hasNextLine()) {
 					String line = scanner.nextLine();
 					if(line.startsWith("/")) {
+						System.err.println("\nChecking Configuration "+line);
 						line=line.substring(1);
-						//String type  = line.substring(0, line.indexOf("/"));
+						String type  = line.substring(0, line.indexOf("/"));
 						String rest = line.substring(line.indexOf("/")+1);
 						String node = rest.substring(0, rest.indexOf("/"));
 						String kevalue = rest.substring(rest.indexOf("/")+1);
@@ -87,7 +88,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 						if(value.length()==0) {
 							continue;
 						}
-						if(data.contentEquals("UNKNOWN")) {
+						if(type.contentEquals("configuration")) {
 							continue;
 						}
 						// if either the values are files, just skip the check because of escape values not linig up
@@ -111,7 +112,6 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 							continue;// this is always changing
 						if(data.contentEquals(value)) {
 							System.err.println(key+" is set to "+value);
-
 						}else {
 							log(key+" is not set to "+value+" instead was found to be "+data);
 							newConf=true;
