@@ -1,7 +1,7 @@
 {
 
 "Linux-x64":{
-				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.0.11/"
+				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"tar.gz",
 			  "name":"Eclipse-Groovy-Linux-x86_64",
@@ -12,7 +12,7 @@
 			  	}
 			  },
 "Windows-x64":{
-				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.0.11/"
+				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"zip",
 			  "name":"Eclipse-Groovy-Windows-x86_64",
@@ -20,7 +20,7 @@
 			  "configExecutable":"eclipsec.exe"
 			  },
 "Mac-x64":{
-				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.0.11/"
+				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"zip",
 			  "name":"Eclipse-Groovy-Mac-x86_64",
@@ -28,7 +28,7 @@
 			  "configExecutable":"Eclipse.app/Contents/MacOS/eclipse"
 			  },
 "Mac-aarch64":{
-				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.0.11/"
+				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"zip",
 			  "name":"Eclipse-Groovy-Mac-arm64",

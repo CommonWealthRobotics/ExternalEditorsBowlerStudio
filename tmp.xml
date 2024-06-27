@@ -1,0 +1,14 @@
+<project name="Build Plugin" default="build">
+  <target name="build">
+    <java classname="org.eclipse.equinox.launcher.Main" fork="true" failonerror="true">
+      <arg value="-application"/>
+      <arg value="org.eclipse.ant.core.antRunner"/>
+      <arg value="-buildfile"/>
+      <arg value="${eclipse.pdebuild.scripts}/build.xml"/>
+      <arg value="-Dbuilder=${basedir}"/>
+      <classpath>
+        <pathelement location="${eclipse.launcher}"/>
+      </classpath>
+    </java>
+  </target>
+</project>
