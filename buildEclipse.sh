@@ -38,7 +38,7 @@ LOCATION=$DOWNDIR""$BASEFILE
 case "${TYPE}" in
     Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
     Mac*)                MYECLIPSE=$LOCATION/Eclipse.app/Contents/MacOS/eclipse;;
-    Windows-x86_64*)     MYECLIPSE=$LOCATION/eclipsec.exe;;
+    Windows-x86_64*)     MYECLIPSE="$LOCATION/eclipsec.exe";;
 esac
 if ! test -f "$PACKAGE"; then
   echo "$PACKAGE File does not exist."
@@ -141,47 +141,51 @@ cat $TEMP_BUILD_PROPS
 
 # Run PDE Build and capture output
 # Run PDE Build and capture output
-BUILD_OUTPUT=$("$ECLIPSE_HOME/eclipsec" -nosplash -application org.eclipse.pde.build.Build \
-  -data "$TEMP_WORKSPACE" \
-  -configuration "$TEMP_WORKSPACE/configuration" \
-  -buildfile "$ECLIPSE_HOME/plugins/org.eclipse.pde.build_3.12.300.v20240212-0530/scripts/build.xml" \
-  -Dbuilder="$PROJECT_DIR" \
-  -DbaseLocation="$ECLIPSE_HOME" \
-  -DbuildDirectory="$PROJECT_DIR" \
-  -Dbase="$ECLIPSE_HOME" \
-  -DpluginPath="$ECLIPSE_HOME/plugins" \
-  -DoutputDirectory="$OUTPUT_DIR" \
-  -DskipBase=true \
-  -DskipMaps=true \
-  -DskipFetch=true \
-  -DbuildProperties="$TEMP_BUILD_PROPS" \
-  -Dgenerate.p2.metadata=true \
-  -Dp2.metadata.repo="file:$OUTPUT_DIR/repository" \
-  -Dp2.artifact.repo="file:$OUTPUT_DIR/repository" \
-  -Dp2.compress=true \
-  -Dp2.gathering=true \
-  -debug \
-  -verbose)
-
-
-echo "Build completed. Checking output directory..."
-
-# Check for files in the output directory
-echo "Contents of $OUTPUT_DIR:"
-find "$OUTPUT_DIR" -type f
-echo "Searching for recently created JAR files in the project directory..."
-find "$PROJECT_DIR" -name "*.jar" -mmin -10 -type f
-
-# Print build output
-echo "Build Output:"
-echo "$BUILD_OUTPUT"
-
-echo "Searching for clues in build output..."
-echo "$BUILD_OUTPUT" | grep -i "jar"
-echo "$BUILD_OUTPUT" | grep -i "output"
-echo "$BUILD_OUTPUT" | grep -i "created"
-echo "$BUILD_OUTPUT" | grep -i "generating"
-
+#	BUILD_OUTPUT=$("$ECLIPSE_HOME/eclipsec" -nosplash -application org.eclipse.pde.build.Build \
+#	  -data "$TEMP_WORKSPACE" \
+#	  -configuration "$TEMP_WORKSPACE/configuration" \
+#	  -buildfile "$ECLIPSE_HOME/plugins/org.eclipse.pde.build_3.12.300.v20240212-0530/scripts/build.xml" \
+#	  -Dbuilder="$PROJECT_DIR" \
+#	  -DbaseLocation="$ECLIPSE_HOME" \
+#	  -DbuildDirectory="$PROJECT_DIR" \
+#	  -Dbase="$ECLIPSE_HOME" \
+#	  -DpluginPath="$ECLIPSE_HOME/plugins" \
+#	  -DoutputDirectory="$OUTPUT_DIR" \
+#	  -DskipBase=true \
+#	  -DskipMaps=true \
+#	  -DskipFetch=true \
+#	  -DbuildProperties="$TEMP_BUILD_PROPS" \
+#	  -Dgenerate.p2.metadata=true \
+#	  -Dp2.metadata.repo="file:$OUTPUT_DIR/repository" \
+#	  -Dp2.artifact.repo="file:$OUTPUT_DIR/repository" \
+#	  -Dp2.compress=true \
+#	  -Dp2.gathering=true \
+#	  -debug \
+#	  -verbose)
+	
+	
+#	echo "Build completed. Checking output directory..."
+	
+	# Check for files in the output directory
+#	echo "Contents of $OUTPUT_DIR:"
+#	find "$OUTPUT_DIR" -type f
+#	echo "Searching for recently created JAR files in the project directory..."
+#	find "$PROJECT_DIR" -name "*.jar" -mmin -10 -type f
+#	
+	# Print build output
+#	echo "Build Output:"
+#	echo "$BUILD_OUTPUT"
+	
+#	echo "Searching for clues in build output..."
+#	echo "$BUILD_OUTPUT" | grep -i "jar"
+#	echo "$BUILD_OUTPUT" | grep -i "output"
+#	echo "$BUILD_OUTPUT" | grep -i "created"
+#	echo "$BUILD_OUTPUT" | grep -i "generating"
+case "${TYPE}" in
+    Windows*)       MKPKG="cp -r ./plugin-out/dropins/* \"$LOCATION/dropins/\" ";;
+    Mac*)          MKPKG="cp -r ./plugin-out/dropins/* \"$LOCATION/Eclipse.app/Contents/Eclipse/dropins/\"";;
+    Linux*)         MKPKG="cp -r ./plugin-out/dropins/* $LOCATION/dropins/";;
+esac
 NAME=Eclipse-Groovy
 case "${TYPE}" in
     Windows*)       MKPKG="7z a \"$SCRIPT_DIR/$RELEASEDIR/$NAME-$TYPE.zip\" \"$LOCATION/\"* ";;
