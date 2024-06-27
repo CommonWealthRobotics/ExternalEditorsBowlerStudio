@@ -102,7 +102,7 @@ OUTPUT_DIR="$PROJECT_DIR/build_output"
 # Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-RELEASEDIR=output
+RELEASEDIR=release
 rm -rf "$SCRIPT_DIR/$RELEASEDIR"
 mkdir -p "$SCRIPT_DIR/$RELEASEDIR"
 
