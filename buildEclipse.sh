@@ -186,6 +186,8 @@ case "${TYPE}" in
     Mac*)          MKPKG="cp -r ./plugin-out/dropins/* \"$LOCATION/Eclipse.app/Contents/Eclipse/dropins/\"";;
     Linux*)         MKPKG="cp -r ./plugin-out/dropins/* $LOCATION/dropins/";;
 esac
+echo "$MKPKG"
+eval "$MKPKG"
 NAME=Eclipse-Groovy
 case "${TYPE}" in
     Windows*)       MKPKG="7z a \"$SCRIPT_DIR/$RELEASEDIR/$NAME-$TYPE.zip\" \"$LOCATION/\"* ";;
