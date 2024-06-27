@@ -44,8 +44,9 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 	}
 	@Override
 	public void earlyStartup() {
-		String epfPath = System.getenv("ECLIPSE_PREFERENCE_FILE").strip();
+		String epfPath = System.getenv("ECLIPSE_PREFERENCE_FILE");
 		if (epfPath != null && !epfPath.isEmpty()) {
+			epfPath=epfPath.strip();
 			if(epfPath.contains("\"")) {
 				epfPath = epfPath.replace("\"", "").strip();
 			}
