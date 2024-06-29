@@ -13,8 +13,8 @@
 			  ,
 			  "type":"zip",
 			  "name":"arduino-ide_2.3.2_Windows_64bit",
-			  "executable":"arduino-ide_2.3.2_Windows_64bit/arduino-ide.exe",
-			  "configExecutable":"arduino-ide_2.3.2_Windows_64bit/arduino-ide.exe"
+			  "executable":"Arduino IDE.exe",
+			  "configExecutable":"Arduino IDE.exe"
 			  },
 "Mac-x64":{
 				"url":"https://downloads.arduino.cc/arduino-ide/"
