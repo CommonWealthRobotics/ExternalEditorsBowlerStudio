@@ -21,16 +21,16 @@
 			  ,
 			  "type":"dmg",
 			  "name":"arduino-ide_2.3.2_macOS_64bit",
-			  "executable":"Arduino.app",
-			  "configExecutable":"Arduino.app/Contents/MacOS/arduino-ide"
+			  "executable":"Arduino IDE.app",
+			  "configExecutable":"Arduino IDE.app/Contents/MacOS/arduino-ide"
 			  },
 "Mac-aarch64":{
 				"url":"https://downloads.arduino.cc/arduino-ide/"
 			  ,
 			  "type":"dmg",
 			  "name":"arduino-ide_2.3.2_macOS_arm64",
-			  "executable":"Arduino.app",
-			  "configExecutable":"Arduino.app/Contents/MacOS/arduino-ide"
+			  "executable":"Arduino IDE.app",
+			  "configExecutable":"Arduino IDE.app/Contents/MacOS/arduino-ide"
 			  }			  
 
 }
