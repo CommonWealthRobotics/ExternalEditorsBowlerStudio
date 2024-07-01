@@ -3,7 +3,7 @@
 "Linux-x64":{
 				"url":"https://downloads.arduino.cc/arduino-cli/"
 			  ,
-			  "type":"zip",
+			  "type":"tar.gz",
 			  "name":"arduino-cli_latest_Linux_64bit",
 			  "executable":"arduino-cli",
 			  "configExecutable":"arduino-cli"
