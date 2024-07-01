@@ -1,0 +1,36 @@
+{
+
+"Linux-x64":{
+				"url":"https://downloads.arduino.cc/arduino-cli/"
+			  ,
+			  "type":"zip",
+			  "name":"arduino-cli_latest_Linux_64bit",
+			  "executable":"arduino-cli",
+			  "configExecutable":"arduino-cli"
+			  },
+"Windows-x64":{
+				"url":"https://downloads.arduino.cc/arduino-cli/"
+			  ,
+			  "type":"zip",
+			  "name":"arduino-cli_latest_Windows_64bit",
+			  "executable":"arduino-cli.exe",
+			  "configExecutable":"arduino-cli.exe"
+			  },
+"Mac-x64":{
+				"url":"https://downloads.arduino.cc/arduino-cli/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"arduino-cli_latest_macOS_64bit",
+			  "executable":"arduino-cli",
+			  "configExecutable":"arduino-cli"
+			  },
+"Mac-aarch64":{
+				"url":"https://downloads.arduino.cc/arduino-cli/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"arduino-cli_latest_macOS_arm64",
+			  "executable":"Aarduino-cli",
+			  "configExecutable":"arduino-cli"
+			  }			  
+
+}
