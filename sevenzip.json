@@ -1,0 +1,10 @@
+{
+"Windows-x64":{
+				"url":"https://www.7-zip.org/a/7z2407-extra.7z"
+			  ,
+			  "type":"7z",
+			  "name":"7z2407-extra",
+			  "executable":"7z.exe",
+			  "configExecutable":"7z.exe"
+			  }
+}
