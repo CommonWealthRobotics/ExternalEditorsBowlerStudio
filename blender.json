@@ -12,8 +12,8 @@
 			  ,
 			  "type":"zip",
 			  "name":"blender-4.1.0-windows-x64",
-			  "executable":"blender.exe",
-			  "configExecutable":"blender.exe"
+			  "executable":"blender-4.1.0-windows-x64\\blender.exe",
+			  "configExecutable":"blender-4.1.0-windows-x64\\blender.exe"
 			  },
 "Mac-x64":{
 				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
