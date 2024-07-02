@@ -4,7 +4,7 @@
 			  ,
 			  "type":"tar.xz",
 			  "name":"blender-4.1.1-linux-x64",
-			  "executable":"blender",
-			  "configExecutable":"blender"
+			  "executable":"blender-4.1.1-linux-x64/blender",
+			  "configExecutable":"blender-4.1.1-linux-x64/blender"
 			  }
 }
