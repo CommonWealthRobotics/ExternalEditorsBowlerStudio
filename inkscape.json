@@ -9,28 +9,28 @@
 			  "configExecutable":"Inkscape-091e20e-x86_64.AppImage"
 			  },
 "Windows-x64":{
-				"url":"https://downloads.arduino.cc/arduino-cli/"
+				"url":"https://inkscape.org/gallery/item/44622/"
 			  ,
-			  "type":"zip",
-			  "name":"arduino-cli_latest_Windows_64bit",
-			  "executable":"arduino-cli.exe",
-			  "configExecutable":"arduino-cli.exe"
+			  "type":"7z",
+			  "name":"inkscape-1.3.2_2023-11-25_091e20e-x64",
+			  "executable":"inkscape-1.3.2_2023-11-25_091e20e-x64.exe",
+			  "configExecutable":"inkscape-1.3.2_2023-11-25_091e20e-x64.exe"
 			  },
 "Mac-x64":{
-				"url":"https://downloads.arduino.cc/arduino-cli/"
+				"url":"https://inkscape.org/gallery/item/44623/"
 			  ,
-			  "type":"tar.gz",
-			  "name":"arduino-cli_latest_macOS_64bit",
-			  "executable":"arduino-cli",
-			  "configExecutable":"arduino-cli"
+			  "type":"dmg",
+			  "name":"Inkscape-1.3.2_x86_64",
+			  "executable":"Inkscape.app",
+			  "configExecutable":"Inkscape.app"
 			  },
 "Mac-aarch64":{
-				"url":"https://downloads.arduino.cc/arduino-cli/"
+				"url":"https://inkscape.org/gallery/item/44624/"
 			  ,
-			  "type":"tar.gz",
-			  "name":"arduino-cli_latest_macOS_arm64",
-			  "executable":"arduino-cli",
-			  "configExecutable":"arduino-cli"
+			  "type":"dmg",
+			  "name":"Inkscape-1.3.2_arm64",
+			  "executable":"Inkscape.app",
+			  "configExecutable":"Inkscape.app"
 			  }			  
 
 }
