@@ -6,5 +6,31 @@
 			  "name":"blender-4.1.1-linux-x64",
 			  "executable":"blender-4.1.1-linux-x64/blender",
 			  "configExecutable":"blender-4.1.1-linux-x64/blender"
-			  }
+			  },
+"Windows-x64":{
+				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+			  ,
+			  "type":"zip",
+			  "name":"blender-4.1.0-windows-x64",
+			  "executable":"blender.exe",
+			  "configExecutable":"blender.exe"
+			  },
+"Mac-x64":{
+				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+			  ,
+			  "type":"dmg",
+			  "name":"blender-4.1.1-macos-x86",
+			  "executable":"Blender.app",
+			  "configExecutable":"Blender.app"
+			  },
+"Mac-aarch64":{
+				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+			  ,
+			  "type":"dmg",
+			  "name":"blender-4.1.1-macos-arm64",
+			  "executable":"Blender.app",
+			  "configExecutable":"Blender.app"
+			  }			  
+
+}
 }
