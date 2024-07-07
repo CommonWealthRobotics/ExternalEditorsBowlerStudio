@@ -1,0 +1,11 @@
+{
+
+"Windows-x64":{
+				"url":"https://downloads.arduino.cc/arduino-ide/"
+			  ,
+			  "type":"msi",
+			  "name":"arduino-ide_2.3.2_Windows_64bit",
+			  "executable":"arduino-ide_2.3.2_Windows_64bit.msi",
+			  "configExecutable":"arduino-ide_2.3.2_Windows_64bit.msi"
+			  }
+}
