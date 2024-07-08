@@ -1,0 +1,11 @@
+{
+"Linux-x64":{
+				"url":"https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/"
+			  ,
+			  "type":"AppImage",
+			  "name":"FreeCAD_weekly-builds-38043-conda-Linux-x86_64-py311",
+			  "executable":"FreeCAD_weekly-builds-38043-conda-Linux-x86_64-py311.AppImage",
+			  "configExecutable":"FreeCAD_weekly-builds-38043-conda-Linux-x86_64-py311.AppImage"
+			  }
+
+}
