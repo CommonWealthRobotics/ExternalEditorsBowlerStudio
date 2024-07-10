@@ -4,14 +4,14 @@
     "type": "dmg",
     "name": "FreeCAD_weekly-builds-38079-conda-macOS-x86_64-py311",
     "executable": "FreeCAD.app",
-    "configExecutable": "FreeCAD.app"
+    "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Mac-aarch64": {
     "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
     "type": "dmg",
     "name": "FreeCAD_weekly-builds-38079-conda-macOS-arm64-py311",
     "executable": "FreeCAD.app",
-    "configExecutable": "FreeCAD.app"
+    "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Windows-x64": {
     "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
