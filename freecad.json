@@ -18,7 +18,7 @@
     "type": "7z",
     "name": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311",
     "executable": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311\\bin\\freecad.exe",
-    "configExecutable": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311\\bin\\freecadcmd.exe"
+    "configExecutable": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311\\bin\\freecad.exe"
   },
   "Linux-x64": {
     "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
