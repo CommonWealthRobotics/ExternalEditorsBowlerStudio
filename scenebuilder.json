@@ -1,0 +1,36 @@
+{
+
+"Linux-x64":{
+				"url":"https://download2.gluonhq.com/scenebuilder/8.5.0/"
+			  ,
+			  "type":"jar",
+			  "name":"scenebuilder-8.5.0-all",
+			  "executable":"scenebuilder-8.5.0-all.jar",
+			  "configExecutable":"scenebuilder-8.5.0-all.jar"
+			  },
+"Windows-x64":{
+				"url":"https://download2.gluonhq.com/scenebuilder/8.5.0/"
+			  ,
+			  "type":"jar",
+			  "name":"scenebuilder-8.5.0-all",
+			  "executable":"scenebuilder-8.5.0-all.jar",
+			  "configExecutable":"scenebuilder-8.5.0-all.jar"
+			  },
+"Mac-x64":{
+				"url":"https://download2.gluonhq.com/scenebuilder/8.5.0/"
+			  ,
+			  "type":"jar",
+			  "name":"scenebuilder-8.5.0-all",
+			  "executable":"scenebuilder-8.5.0-all.jar",
+			  "configExecutable":"scenebuilder-8.5.0-all.jar"
+			  },
+"Mac-aarch64":{
+				"url":"https://download2.gluonhq.com/scenebuilder/8.5.0/"
+			  ,
+			  "type":"jar",
+			  "name":"scenebuilder-8.5.0-all",
+			  "executable":"scenebuilder-8.5.0-all.jar",
+			  "configExecutable":"scenebuilder-8.5.0-all.jar"
+			  }	  
+
+}
