@@ -1,0 +1,26 @@
+{
+"Linux-x64":{
+				"url":"https://files.openscad.org/"
+			  ,
+			  "type":"AppImage",
+			  "name":"OpenSCAD-2021.01-x86_64",
+			  "executable":"OpenSCAD-2021.01-x86_64.AppImage",
+			  "configExecutable":"OpenSCAD-2021.01-x86_64.AppImage"
+			  },
+"Windows-x64":{
+				"url":"https://files.openscad.org/"
+			  ,
+			  "type":"zip",
+			  "name":"OpenSCAD-2021.01-x86-64",
+			  "executable":"openscad-2021.01\\openscad.exe",
+			  "configExecutable":"openscad-2021.01\\openscad.exe"
+			  },
+"Mac-x64":{
+				"url":"https://files.openscad.org/"
+			  ,
+			  "type":"dmg",
+			  "name":"OpenSCAD-2021.01.dmg",
+			  "executable":"OpenSCAD.app",
+			  "configExecutable":"OpenSCAD.app/Contents/MacOS/OpenSCAD"
+			  }		  
+}
