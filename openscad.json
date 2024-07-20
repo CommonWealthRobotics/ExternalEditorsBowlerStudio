@@ -22,5 +22,13 @@
 			  "name":"OpenSCAD-2021.01.dmg",
 			  "executable":"OpenSCAD.app",
 			  "configExecutable":"OpenSCAD.app/Contents/MacOS/OpenSCAD"
+			  },
+"Mac-aarch64":{
+				"url":"https://files.openscad.org/"
+			  ,
+			  "type":"dmg",
+			  "name":"OpenSCAD-2021.01.dmg",
+			  "executable":"OpenSCAD.app",
+			  "configExecutable":"OpenSCAD.app/Contents/MacOS/OpenSCAD"
 			  }		  
 }
