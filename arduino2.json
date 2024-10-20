@@ -21,6 +21,7 @@
 				"url":"https://downloads.arduino.cc/arduino-ide/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"arduino-ide_2.3.2_macOS_64bit",
 			  "executable":"Arduino IDE.app",
 			  "configExecutable":"Arduino IDE.app/Contents/MacOS/arduino-ide"
@@ -29,6 +30,7 @@
 				"url":"https://downloads.arduino.cc/arduino-ide/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"arduino-ide_2.3.2_macOS_arm64",
 			  "executable":"Arduino IDE.app",
 			  "configExecutable":"Arduino IDE.app/Contents/MacOS/arduino-ide"

@@ -20,6 +20,7 @@
 				"url":"https://inkscape.org/gallery/item/44623/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"Inkscape-1.3.2_x86_64",
 			  "executable":"Inkscape.app",
 			  "configExecutable":"Inkscape.app"
@@ -28,6 +29,7 @@
 				"url":"https://inkscape.org/gallery/item/44624/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"Inkscape-1.3.2_arm64",
 			  "executable":"Inkscape.app",
 			  "configExecutable":"Inkscape.app"

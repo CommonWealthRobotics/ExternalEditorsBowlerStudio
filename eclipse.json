@@ -23,6 +23,7 @@
 				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"zip",
+			  "ospath":"/Applications/",
 			  "name":"Eclipse-Groovy-Mac-x86_64",
 			  "executable":"Eclipse.app",
 			  "configExecutable":"Eclipse.app/Contents/MacOS/eclipse"
@@ -31,6 +32,7 @@
 				"url":"https://github.com/CommonWealthRobotics/ExternalEditorsBowlerStudio/releases/download/0.1.1/"
 			  ,
 			  "type":"zip",
+			  "ospath":"/Applications/",
 			  "name":"Eclipse-Groovy-Mac-arm64",
 			  "executable":"Eclipse.app",
 			  "configExecutable":"Eclipse.app/Contents/MacOS/eclipse"

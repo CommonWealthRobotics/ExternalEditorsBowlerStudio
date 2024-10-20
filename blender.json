@@ -19,6 +19,7 @@
 				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"blender-4.1.1-macos-x64",
 			  "executable":"Blender.app",
 			  "configExecutable":"Blender.app/Contents/MacOS/Blender"
@@ -27,6 +28,7 @@
 				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
 			  ,
 			  "type":"dmg",
+			  "ospath":"/Applications/",
 			  "name":"blender-4.1.1-macos-arm64",
 			  "executable":"Blender.app",
 			  "configExecutable":"Blender.app/Contents/MacOS/Blender"
