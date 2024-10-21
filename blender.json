@@ -8,28 +8,28 @@
 			  "configExecutable":"blender-4.2.3-linux-x64/blender"
 			  },
 "Windows-x64":{
-				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+				"url":"https://mirrors.iu13.net/blender/release/Blender4.2/"
 			  ,
 			  "type":"zip",
-			  "name":"blender-4.1.0-windows-x64",
-			  "executable":"blender-4.1.0-windows-x64\\blender.exe",
-			  "configExecutable":"blender-4.1.0-windows-x64\\blender.exe"
+			  "name":"blender-4.2.3-windows-x64",
+			  "executable":"blender-4.2.3-windows-x64\\blender.exe",
+			  "configExecutable":"blender-4.2.3-windows-x64\\blender.exe"
 			  },
 "Mac-x64":{
-				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+				"url":"https://mirrors.iu13.net/blender/release/Blender4.2/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
-			  "name":"blender-4.1.1-macos-x64",
+			  "name":"blender-4.2.3-macos-x64",
 			  "executable":"Blender.app",
 			  "configExecutable":"Blender.app/Contents/MacOS/Blender"
 			  },
 "Mac-aarch64":{
-				"url":"https://mirror.clarkson.edu/blender/release/Blender4.1/"
+				"url":"https://mirrors.aliyun.com/blender/release/Blender4.2/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
-			  "name":"blender-4.1.1-macos-arm64",
+			  "name":"blender-4.2.3-macos-arm64",
 			  "executable":"Blender.app",
 			  "configExecutable":"Blender.app/Contents/MacOS/Blender"
 			  }			  
