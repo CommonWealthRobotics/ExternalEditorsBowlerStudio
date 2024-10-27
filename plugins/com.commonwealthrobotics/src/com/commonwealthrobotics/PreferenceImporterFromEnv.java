@@ -75,7 +75,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 				while (scanner.hasNextLine()) {
 					String line = scanner.nextLine();
 					if(line.startsWith("/")) {
-						System.err.println("\nChecking Configuration "+line);
+						//System.out.println("\nChecking Configuration "+line);
 						line=line.substring(1);
 						String type  = line.substring(0, line.indexOf("/"));
 						String rest = line.substring(line.indexOf("/")+1);
@@ -111,7 +111,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 						if(key.contentEquals("platformState"))
 							continue;// this is always changing
 						if(data.contentEquals(value)) {
-							System.err.println(key+" is set to "+value);
+							//System.out.println(key+" is set to "+value);
 						}else {
 							log(key+" is not set to "+value+" instead was found to be "+data);
 							newConf=true;
@@ -146,7 +146,7 @@ public class PreferenceImporterFromEnv extends AbstractUIPlugin implements IStar
 	}
 
 	private void log(String x) {
-		System.err.println(x);
+		//System.out.println(x);
 		getLog().log(new Status(IStatus.INFO, PreferenceImporterFromEnv.class, x));
 	}
 }
