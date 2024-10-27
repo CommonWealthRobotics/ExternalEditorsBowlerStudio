@@ -4,6 +4,7 @@
 			  ,
 			  "type":"7z",
 			  "name":"7z2407-extra",
+			   "ospath":"C:\\Program Files\\7-zip\\",
 			  "executable":"x64\\7za.exe",
 			  "configExecutable":"x64\\7za.exe"
 			  }
