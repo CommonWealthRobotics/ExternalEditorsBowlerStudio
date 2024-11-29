@@ -16,20 +16,20 @@
 			  "configExecutable":"openscad-2021.01\\openscad.exe"
 			  },
 "Mac-x64":{
-				"url":"https://files.openscad.org/"
+				"url":"https://files.openscad.org/snapshots/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
-			  "name":"OpenSCAD-2021.01",
+			  "name":"OpenSCAD-2024.11.29",
 			  "executable":"OpenSCAD.app",
 			  "configExecutable":"OpenSCAD.app/Contents/MacOS/OpenSCAD"
 			  },
 "Mac-aarch64":{
-				"url":"https://files.openscad.org/"
+				"url":"https://files.openscad.org/snapshots/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
-			  "name":"OpenSCAD-2021.01",
+			  "name":"OpenSCAD-2024.11.29",
 			  "executable":"OpenSCAD.app",
 			  "configExecutable":"OpenSCAD.app/Contents/MacOS/OpenSCAD"
 			  }		  
