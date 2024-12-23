@@ -1,32 +1,32 @@
 {
   "Mac-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
+    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
     "type": "dmg",
-			  "ospath":"/Applications/",
-    "name": "FreeCAD_weekly-builds-38079-conda-macOS-x86_64-py311",
+    "ospath": "/Applications/",
+    "name": "FreeCAD_1.0.0-conda-macOS-x86_64-py311",
     "executable": "FreeCAD.app",
     "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Mac-aarch64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
+    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
     "type": "dmg",
-			  "ospath":"/Applications/",
-    "name": "FreeCAD_weekly-builds-38079-conda-macOS-arm64-py311",
+    "ospath": "/Applications/",
+    "name": "FreeCAD_1.0.0-conda-macOS-arm64-py311",
     "executable": "FreeCAD.app",
     "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Windows-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
+    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
     "type": "7z",
-    "name": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311",
-    "executable": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311\\bin\\freecad.exe",
-    "configExecutable": "FreeCAD_weekly-builds-38079-conda-Windows-x86_64-py311\\bin\\freecad.exe"
+    "name": "FreeCAD_1.0.0-conda-Windows-x86_64-py311",
+    "executable": "FreeCAD_1.0.0-conda-Windows-x86_64-py311\\bin\\freecad.exe",
+    "configExecutable": "FreeCAD_1.0.0-conda-Windows-x86_64-py311\\bin\\freecad.exe"
   },
   "Linux-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/",
+    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
     "type": "AppImage",
-    "name": "FreeCAD_weekly-builds-38314-conda-Linux-x86_64-py311",
-    "executable": "FreeCAD_weekly-builds-38314-conda-Linux-x86_64-py311.AppImage",
-    "configExecutable": "FreeCAD_weekly-builds-38314-conda-Linux-x86_64-py311.AppImage"
+    "name": "FreeCAD_1.0.0-conda-Linux-x86_64-py311",
+    "executable": "FreeCAD_1.0.0-conda-Linux-x86_64-py311.AppImage",
+    "configExecutable": "FreeCAD_1.0.0-conda-Linux-x86_64-py311.AppImage"
   }
 }
