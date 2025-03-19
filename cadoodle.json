@@ -1,0 +1,44 @@
+{
+"Linux-x64":{
+				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
+			  ,
+			  "type":"AppImage",
+			  "name":"CaDoodle-Linux-x86_64",
+			  "executable":"CaDoodle-Linux-x86_64.AppImage",
+			  "configExecutable":"CaDoodle-Linux-x86_64.AppImage"
+			  },
+"Linux-aarch64":{
+				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
+			  ,
+			  "type":"AppImage",
+			  "name":"CaDoodle-Linux-arm64",
+			  "executable":"CaDoodle-Linux-arm64.AppImage",
+			  "configExecutable":"CaDoodle-Linux-arm64.AppImage"
+			  },
+"Windows-x64":{
+				"url":"https://github.com/CommonWealthRobotics/HatRack/releases/latest/download/"
+			  ,
+			  "type":"zip",
+			  "name":"CaDoodle-Windows-x86_64",
+			  "executable":"CaDoodle-Windows-x86_64\\CabDoodle\\CaDoodle.exe",
+			  "configExecutable":"CaDoodle-Windows-x86_64\\CabDoodle\\CaDoodle.exe"
+			  },
+"Mac-x64":{
+				"url":"https://github.com/CommonWealthRobotics/HatRack/releases/latest/download/"
+			  ,
+			  "type":"dmg",
+			  "ospath":"/Applications/",
+			  "name":"CaDoodle-MacOS-x86_64",
+			  "executable":"CaDoodle.app",
+			  "configExecutable":"CaDoodle.app/Contents/MacOS/CaDoodle"
+			  },
+"Mac-aarch64":{
+				"url":"https://mirrors.aliyun.com/blender/release/Blender4.2/"
+			  ,
+			  "type":"dmg",
+			  "ospath":"/Applications/",
+			  "name":"CaDoodle-MacOS-arm64",
+			  "executable":"CaDoodle.app",
+			  "configExecutable":"CaDoodle.app/Contents/MacOS/CaDoodle"
+			  }			  
+}
