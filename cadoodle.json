@@ -16,7 +16,7 @@
 			  "configExecutable":"CaDoodle-Linux-arm64.AppImage"
 			  },
 "Windows-x64":{
-				"url":"https://github.com/CommonWealthRobotics/HatRack/releases/latest/download/"
+				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
 			  ,
 			  "type":"zip",
 			  "name":"CaDoodle-Windows-x86_64",
@@ -24,7 +24,7 @@
 			  "configExecutable":"CaDoodle-Windows-x86_64\\CabDoodle\\CaDoodle.exe"
 			  },
 "Mac-x64":{
-				"url":"https://github.com/CommonWealthRobotics/HatRack/releases/latest/download/"
+				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
@@ -33,7 +33,7 @@
 			  "configExecutable":"CaDoodle.app/Contents/MacOS/CaDoodle"
 			  },
 "Mac-aarch64":{
-				"url":"https://mirrors.aliyun.com/blender/release/Blender4.2/"
+				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
 			  ,
 			  "type":"dmg",
 			  "ospath":"/Applications/",
