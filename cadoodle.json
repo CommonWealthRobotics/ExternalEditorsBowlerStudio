@@ -5,7 +5,9 @@
 			  "type":"AppImage",
 			  "name":"CaDoodle-Linux-x86_64",
 			  "executable":"CaDoodle-Linux-x86_64.AppImage",
-			  "configExecutable":"CaDoodle-Linux-x86_64.AppImage"
+			  "configExecutable":"CaDoodle-Linux-x86_64.AppImage",
+			  "osEXE":"/opt/cadoodle/bin/CaDoodle",
+			  "osCONFIG":"/opt/cadoodle/bin/CaDoodle"
 			  },
 "Linux-aarch64":{
 				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
@@ -13,7 +15,9 @@
 			  "type":"AppImage",
 			  "name":"CaDoodle-Linux-arm64",
 			  "executable":"CaDoodle-Linux-arm64.AppImage",
-			  "configExecutable":"CaDoodle-Linux-arm64.AppImage"
+			  "configExecutable":"CaDoodle-Linux-arm64.AppImage",
+			  "osEXE":"/opt/cadoodle/bin/CaDoodle",
+			  "osCONFIG":"/opt/cadoodle/bin/CaDoodle"
 			  },
 "Windows-x64":{
 				"url":"https://github.com/CommonWealthRobotics/CaDoodle/releases/latest/download/"
