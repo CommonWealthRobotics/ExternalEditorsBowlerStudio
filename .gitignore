@@ -1,8 +1,6 @@
-/.project
 /hs_err_pid*.log
 /importThis/
 release
 /bin/
 /build_output/
 /output/
-/.classpath
