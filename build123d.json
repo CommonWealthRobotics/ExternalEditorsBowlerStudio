@@ -1,0 +1,10 @@
+{
+"Linux-x64":{
+				"url":"https://github.com/jdegenstein/cadoodle-build123d-portable/releases/latest/download/"
+			  ,
+			  "type":"zip",
+			  "name":"cadoodle-build123d-portable-ubuntu-latest",
+			  "executable":"python/python3.12",
+			  "configExecutable":"python/python3.12"
+			  }
+}
