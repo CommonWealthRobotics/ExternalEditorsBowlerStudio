@@ -7,6 +7,14 @@
 			  "executable":"OpenSCAD-2026.01.03-x86_64.AppImage",
 			  "configExecutable":"OpenSCAD-2026.01.03-x86_64.AppImage"
 			  },
+"Linux-aarch64":{
+				"url":"https://files.openscad.org/snapshots/"
+			  ,
+			  "type":"AppImage",
+			  "name":"OpenSCAD-2023.09.11.ai-aarch64",
+			  "executable":"OpenSCAD-2023.09.11.ai-aarch64.AppImage",
+			  "configExecutable":"OpenSCAD-2023.09.11.ai-aarch64.AppImage"
+},
 "Windows-x64":{
 				"url":"https://files.openscad.org/snapshots/"
 			  ,
