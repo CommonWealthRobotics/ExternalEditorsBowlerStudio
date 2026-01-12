@@ -1,8 +1,8 @@
 {
 "Linux-x64":{
-			  "url":"https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.3/",
+			  "url":"https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
 			  "type":"zip",
-			  "name":"cadoodle-build123d-portable-linux-x86_64",
+			  "name":"cadoodle-build123d-portable-ubuntu-x86_64",
 			  "executable":"uv/uv",
 			  "configExecutable":"uv/uv",
 			  "setup":"path_patch.sh"
