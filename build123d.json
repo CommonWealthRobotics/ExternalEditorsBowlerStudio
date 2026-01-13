@@ -16,7 +16,7 @@
     "setup" : "path_patch.bat"
   },
   "Mac-aarch64" : {
-    "url" : "https://mirrors.aliyun.com/blender/release/Blender4.2/",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
     "type" : "zip",
     "name" : "cadoodle-build123d-portable-macos-14-arm64",
     "executable" : "uv/uv",
