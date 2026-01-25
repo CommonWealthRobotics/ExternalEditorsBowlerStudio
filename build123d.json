@@ -1,29 +1,29 @@
 {
   "Linux-x64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
-    "type" : "zip",
-    "name" : "cadoodle-build123d-portable-ubuntu-x86_64",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.6/",
+    "type" : "tar.gz",
+    "name" : "cadoodle-build123d-portable_v0.0.6-linux-x86_64",
     "executable" : "uv/uv",
     "configExecutable" : "uv/uv",
     "setup" : "path_patch.sh",
-    "version":"0.0.4"
+    "version":"0.0.6"
   },
   "Windows-x64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.6/",
     "type" : "zip",
     "name" : " cadoodle-build123d-portable-windows-x86_64",
     "executable" : "uv\\uv",
     "configExecutable" : "uv\\uv",
     "setup" : "path_patch.bat",
-    "version":"0.0.4"
+    "version":"0.0.6"
   },
   "Mac-aarch64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.6/",
     "type" : "zip",
     "name" : "cadoodle-build123d-portable-macos-14-arm64",
     "executable" : "uv/uv",
     "configExecutable" : "uv/uv",
     "setup" : "path_patch.sh",
-    "version":"0.0.4"
+    "version":"0.0.6"
   }
 }
