@@ -1,0 +1,38 @@
+{
+"Linux-x64":{
+				"url":"https://cdn.azul.com/zulu/bin/"
+			  ,
+			  "type":"tar.gz",
+			  "name":"zulu25.32.21-ca-fx-jre25.0.2-linux_x64",
+			  "jvmargs":["-Dprism.forceGPU=true"],
+			  "executable":"zulu25.32.21-ca-fx-jre25.0.2-linux_x64/bin/java",
+			  "configExecutable":"zulu25.32.21-ca-fx-jre25.0.2-linux_x64/"
+			  },
+"Windows-x64":{
+				"url":"https://cdn.azul.com/zulu/bin/"
+			  ,
+			  "type":"zip",
+			  "name":"zulu25.32.21-ca-fx-jre25.0.2-win_x64",
+			  "executable":"zulu25.32.21-ca-fx-jre25.0.2-win_x64/bin/java",
+			  "configExecutable":"zulu25.32.21-ca-fx-jre25.0.2-win_x64/"
+			  },
+"Mac-x64":{
+				"url":"https://cdn.azul.com/zulu/bin/"
+			  ,
+			  "type":"zip",
+			  "name":"zulu25.32.21-ca-fx-jre25.0.2-macosx_x64",
+			  "jvmargs":["-Dprism.forceGPU=true"],
+			  "executable":"zulu25.32.21-ca-fx-jre25.0.2-macosx_x64/bin/java",
+			  "configExecutable":"zulu25.32.21-ca-fx-jre25.0.2-macosx_x64/"
+			  },
+"Mac-aarch64":{
+				"url":"https://cdn.azul.com/zulu/bin/"
+			  ,
+			  "type":"zip",
+			  "name":"zulu25.32.21-ca-fx-jre25.0.2-macosx_aarch64",
+			  "jvmargs":["-Dprism.forceGPU=true"],
+			  "executable":"zulu25.32.21-ca-fx-jre25.0.2-macosx_aarch64/bin/java",
+			  "configExecutable":"zulu25.32.21-ca-fx-jre25.0.2-macosx_aarch64/"
+			  }			  
+
+}
