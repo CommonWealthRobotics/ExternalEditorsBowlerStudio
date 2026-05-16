@@ -1,9 +1,9 @@
 {
 "Windows-x64":{
-				"url":"https://www.7-zip.org/a/"
+				"url":"https://github.com/ip7z/7zip/releases/download/26.01/"
 			  ,
 			  "type":"7z",
-			  "name":"7z2407-extra",
+			  "name":"7z2601-extra",
 			   "ospath":"C:\\Program Files\\7-zip\\",
 			  "executable":"x64\\7za.exe",
 			  "configExecutable":"x64\\7za.exe"
