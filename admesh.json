@@ -3,7 +3,7 @@
 				"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 			  ,
 			  "type":"zip",
-			  "name":"aadmesh-linux-aarch64-gcc-v1.0.0-beta.3",
+			  "name":"admesh-linux-x86_64-gcc-v1.0.0-beta.3",
 			  "executable":"admesh",
 			  "configExecutable":"admesh"
 			  },
