@@ -1,33 +1,33 @@
 {
 "Linux-x64":{
-				"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.2/"
+				"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 			  ,
 			  "type":"zip",
-			  "name":"admesh-linux-x86_64-gcc-v1.0.0-beta.1",
+			  "name":"aadmesh-linux-aarch64-gcc-v1.0.0-beta.3",
 			  "executable":"admesh",
 			  "configExecutable":"admesh"
 			  },
 "Linux-aarch64":{
-	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.2/"
+	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 	,
 	"type":"zip",
-	"name":"admesh-linux-aarch64-gcc-v1.0.0-beta.1",
+	"name":"admesh-linux-aarch64-gcc-v1.0.0-beta.3",
 	"executable":"admesh",
 	"configExecutable":"admesh"
 },
 "Windows-x64":{
-	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.2/"
+	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 	,
 	"type":"zip",
-	"name":"admesh-windows-x86_64-gcc-v1.0.0-beta.1",
+	"name":"admesh-windows-x86_64-gcc-v1.0.0-beta.3",
 	"executable":"admesh.exe",
 	"configExecutable":"admesh.exe"
 			  },
 "Mac-aarch64":{
-	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.2/"
+	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 	,
 	"type":"zip",
-	"name":"admesh-macos-arm64-gcc-v1.0.0-beta.1",
+	"name":"admesh-macos-arm64-gcc-v1.0.0-beta.3",
 	"executable":"admesh",
 	"configExecutable":"admesh"
 			  }		  
