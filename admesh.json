@@ -19,7 +19,7 @@
 	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 	,
 	"type":"zip",
-	"name":"admesh-windows-x86_64-gcc-v1.0.0-beta.3",
+	"name":"aadmesh-windows-x86_64-mingw-v1.0.0-beta.3",
 	"executable":"admesh.exe",
 	"configExecutable":"admesh.exe"
 			  },
