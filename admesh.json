@@ -27,7 +27,7 @@
 	"url":"https://github.com/CommonWealthRobotics/admesh/releases/download/v1.0.0-beta.3/"
 	,
 	"type":"zip",
-	"name":"admesh-macos-arm64-gcc-v1.0.0-beta.3",
+	"name":"admesh-macos-arm64-clang-v1.0.0-beta.3",
 	"executable":"admesh",
 	"configExecutable":"admesh"
 			  }		  
