@@ -20,7 +20,7 @@
     "type" : "zip",
     "name" : "cadoodle-b123d_v0.0.9-macos-x86_64",
     "executable" : "cadoodle-b123d_v0.0.9/py/bin/python",
-    "configExecutable" : "cadoodle-b123d_v0.0.9/py/bin/python"",
+    "configExecutable" : "cadoodle-b123d_v0.0.9/py/bin/python",
     "version":"0.0.9"
   }
 }
