@@ -1,28 +1,26 @@
 {
   "Linux-x64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.8/",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.9/",
     "type" : "tar.gz",
-    "name" : "cadoodle-b123d_v0.0.8-linux-x86_64",
-    "executable" : "py/bin/python",
-    "configExecutable" : "py/bin/python",
-    "version":"0.0.8"
+    "name" : "cadoodle-b123d_v0.0.9-linux-x86_64",
+    "executable" : "cadoodle-b123d_v0.0.9/py/bin/python",
+    "configExecutable" : "cadoodle-b123d_v0.0.9/py/bin/python",
+    "version":"0.0.9"
   },
   "Windows-x64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
-    "type" : "zip",
-    "name" : " cadoodle-build123d-portable-windows-x86_64",
-    "executable" : "uv\\uv",
-    "configExecutable" : "uv\\uv",
-    "setup" : "path_patch.bat",
-    "version":"0.0.4"
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.9/",
+    "type" : "sfx",
+    "name" : "cadoodle-b123d_v0.0.9-windows-x86_64",
+    "executable" : "cadoodle-b123d_v0.0.9\\py\\python",
+    "configExecutable" : "cadoodle-b123d_v0.0.9\\py\\python",
+    "version":"0.0.9"
   },
   "Mac-aarch64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.9/",
     "type" : "zip",
-    "name" : "cadoodle-build123d-portable-macos-14-arm64",
-    "executable" : "uv/uv",
-    "configExecutable" : "uv/uv",
-    "setup" : "path_patch.sh",
-    "version":"0.0.4"
+    "name" : "cadoodle-b123d_v0.0.9-macos-x86_64",
+    "executable" : "cadoodle-b123d_v0.0.9/py/bin/python",
+    "configExecutable" : "cadoodle-b123d_v0.0.9/py/bin/python"",
+    "version":"0.0.9"
   }
 }
