@@ -1,12 +1,11 @@
 {
   "Linux-x64" : {
-    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
-    "type" : "zip",
-    "name" : "cadoodle-build123d-portable-ubuntu-x86_64",
-    "executable" : "uv/uv",
-    "configExecutable" : "uv/uv",
-    "setup" : "path_patch.sh",
-    "version":"0.0.4"
+    "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.8/",
+    "type" : "tar.gz",
+    "name" : "cadoodle-b123d_v0.0.8-linux-x86_64",
+    "executable" : "py/bin/python",
+    "configExecutable" : "py/bin/python",
+    "version":"0.0.8"
   },
   "Windows-x64" : {
     "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.4/",
