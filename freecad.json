@@ -1,32 +1,32 @@
 {
   "Mac-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
+    "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/",
     "type": "dmg",
     "ospath": "/Applications/",
-    "name": "FreeCAD_1.0.0-conda-macOS-x86_64-py311",
+    "name": "FreeCAD_1.1.3-macOS-x86_64-py311",
     "executable": "FreeCAD.app",
     "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Mac-aarch64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
+    "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/",
     "type": "dmg",
     "ospath": "/Applications/",
-    "name": "FreeCAD_1.0.0-conda-macOS-arm64-py311",
+    "name": "FreeCAD_1.1.3-macOS-arm64-py311",
     "executable": "FreeCAD.app",
     "configExecutable": "FreeCAD.app/Contents/MacOS/FreeCAD"
   },
   "Windows-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
+    "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/",
     "type": "7z",
-    "name": "FreeCAD_1.0.0-conda-Windows-x86_64-py311",
-    "executable": "FreeCAD_1.0.0-conda-Windows-x86_64-py311\\bin\\freecad.exe",
-    "configExecutable": "FreeCAD_1.0.0-conda-Windows-x86_64-py311\\bin\\freecad.exe"
+    "name": "FreeCAD_1.1.3-Windows-x86_64-py311",
+    "executable": "FreeCAD_1.1.3-Windows-x86_64-py311\\bin\\freecad.exe",
+    "configExecutable": "FreeCAD_1.1.3-Windows-x86_64-py311\\bin\\freecad.exe"
   },
   "Linux-x64": {
-    "url": "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0.0/",
+    "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.3/",
     "type": "AppImage",
-    "name": "FreeCAD_1.0.0-conda-Linux-x86_64-py311",
-    "executable": "FreeCAD_1.0.0-conda-Linux-x86_64-py311.AppImage",
-    "configExecutable": "FreeCAD_1.0.0-conda-Linux-x86_64-py311.AppImage"
+    "name": "FreeCAD_1.1.3-Linux-x86_64-py311",
+    "executable": "FreeCAD_1.1.3-Linux-x86_64-py311.AppImage",
+    "configExecutable": "FreeCAD_1.1.3-Linux-x86_64-py311.AppImage"
   }
 }
