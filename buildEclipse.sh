@@ -1,9 +1,10 @@
-# https://stackoverflow.com/questions/11633529/installing-plugin-into-eclipse-using-command-line
-
+#!/bin/bash
+# Updated for Eclipse 2026-06 (platform 4.40) / Groovy-Eclipse 6.2.0
+#
 # Eclipse Groovy Development Tools
 # org.codehaus.groovy.eclipse.feature.feature.group
-# 5.1.0.v202309291928-e2306
-# Pivotal Software, Inc.
+# 6.2.0 (targets e4.40 / Eclipse 2026-06)
+# https://github.com/groovy/groovy-eclipse/wiki
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 unameOut="$(uname -s)"
@@ -19,15 +20,26 @@ fi
 TYPE=${machine}"-"$ARCH
 echo ${TYPE}
 
-BASEURL="https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2024-03/R/"
-GROOVYVERSION=https://groovy.jfrog.io/artifactory/plugins-snapshot/e4.31
-ECLIPSEUPDATE=https://download.eclipse.org/releases/2024-03
+RELEASETRAIN="2026-06"
+BASEURL="https://mirror.umd.edu/eclipse/technology/epp/downloads/release/${RELEASETRAIN}/R/"
 
+# Groovy-Eclipse: "plugins-release/e4.40" is the composite update site that
+# always resolves to the latest 6.x Groovy-Eclipse release built for the
+# Eclipse 2026-06 (4.40) target platform. To pin an exact version instead
+# (e.g. for reproducible builds), use:
+#   https://groovy.jfrog.io/artifactory/plugins-release/org/codehaus/groovy/groovy-eclipse-integration/6.2.0/e4.40
+GROOVYVERSION=https://groovy.jfrog.io/artifactory/plugins-release/e4.40
+ECLIPSEUPDATE=https://download.eclipse.org/releases/${RELEASETRAIN}
+
+# NOTE: as of the 2026-06 packaging, macOS ships as a .dmg disk image
+# instead of a .tar.gz archive. Windows/Linux extensions are unchanged.
 case "${TYPE}" in
-    Linux-x86_64*)       BASEFILE="eclipse-java-2024-03-R-linux-gtk-x86_64";EXTENTION="tar.gz";;
-    Mac-x86_64*)         BASEFILE="eclipse-java-2024-03-R-macosx-cocoa-x86_64";EXTENTION="tar.gz";;
-    Mac-arm64*)          BASEFILE="eclipse-java-2024-03-R-macosx-cocoa-aarch64";EXTENTION="tar.gz";;
-    Windows-x86_64*)     BASEFILE="eclipse-java-2024-03-R-win32-x86_64";EXTENTION="zip";;
+    Linux-x86_64*)       BASEFILE="eclipse-java-${RELEASETRAIN}-R-linux-gtk-x86_64";EXTENTION="tar.gz";;
+    Linux-arm64*)        BASEFILE="eclipse-java-${RELEASETRAIN}-R-linux-gtk-aarch64";EXTENTION="tar.gz";;
+    Mac-x86_64*)         BASEFILE="eclipse-java-${RELEASETRAIN}-R-macosx-cocoa-x86_64";EXTENTION="dmg";;
+    Mac-arm64*)          BASEFILE="eclipse-java-${RELEASETRAIN}-R-macosx-cocoa-aarch64";EXTENTION="dmg";;
+    Windows-x86_64*)     BASEFILE="eclipse-java-${RELEASETRAIN}-R-win32-x86_64";EXTENTION="zip";;
+    Windows-arm64*)      BASEFILE="eclipse-java-${RELEASETRAIN}-R-win32-aarch64";EXTENTION="zip";;
 esac
 URL=$BASEURL""$BASEFILE"."$EXTENTION
 echo Downloading $URL
@@ -37,60 +49,82 @@ PACKAGE=$DOWNDIR""$BASEFILE"."$EXTENTION
 LOCATION=$DOWNDIR""$BASEFILE
 case "${TYPE}" in
     Linux-x86_64*)       MYECLIPSE=$LOCATION/eclipse;;
+    Linux-arm64*)        MYECLIPSE=$LOCATION/eclipse;;
     Mac*)                MYECLIPSE=$LOCATION/Eclipse.app/Contents/MacOS/eclipse;;
     Windows-x86_64*)     MYECLIPSE="$LOCATION/eclipsec.exe";;
+    Windows-arm64*)      MYECLIPSE="$LOCATION/eclipsec.exe";;
 esac
 if ! test -f "$PACKAGE"; then
   echo "$PACKAGE File does not exist."
   case "${TYPE}" in
-    Linux-x86_64*)       DOWNLOAD="wget $URL -O $PACKAGE";;
-    Mac-x86_64*)         DOWNLOAD="wget $URL -O $PACKAGE";;
-    Mac-arm64*)          DOWNLOAD="wget $URL -O $PACKAGE";;
-    Windows-x86_64*)     DOWNLOAD="curl $URL -o \"$PACKAGE\"";;
+    Linux*)               DOWNLOAD="wget $URL -O $PACKAGE";;
+    Mac*)                 DOWNLOAD="wget $URL -O $PACKAGE";;
+    Windows*)             DOWNLOAD="curl $URL -o \"$PACKAGE\"";;
   esac
   echo "$DOWNLOAD"
   eval "$DOWNLOAD"
 else
-	echo "$PACKAGE exists"
+    echo "$PACKAGE exists"
 fi
 set -e
 
 if ! test -d "$LOCATION"; then
   echo "LOCATION $LOCATION File does not exist."
-  case "${TYPE}" in
-    Windows*)       EXTRACT="7z x \"$PACKAGE\" -y -o\"$LOCATION\";mv \"$LOCATION/eclipse/\"* \"$LOCATION/\"";;
-    Linux*)         EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;";;
-    Mac*)           EXTRACT="tar -xvzf $PACKAGE -C $LOCATION;";;
-    
-  esac
   mkdir -p "$LOCATION"
-  echo "$EXTRACT"
-  eval "$EXTRACT"
+  case "${TYPE}" in
+    Windows*)
+      EXTRACT="7z x \"$PACKAGE\" -y -o\"$LOCATION\";mv \"$LOCATION/eclipse/\"* \"$LOCATION/\""
+      echo "$EXTRACT"
+      eval "$EXTRACT"
+      ;;
+    Linux*)
+      EXTRACT="tar -xvzf $PACKAGE -C $LOCATION --strip-components=1;"
+      echo "$EXTRACT"
+      eval "$EXTRACT"
+      ;;
+    Mac*)
+      # macOS packages are distributed as .dmg disk images (as of 2026-06),
+      # not .tar.gz. Mount the image, copy Eclipse.app out, then detach.
+      MOUNTPOINT="/tmp/eclipse_dmg_mount_$$"
+      mkdir -p "$MOUNTPOINT"
+      echo "Mounting $PACKAGE at $MOUNTPOINT"
+      hdiutil attach "$PACKAGE" -mountpoint "$MOUNTPOINT" -nobrowse -quiet
+      APPSRC=$(find "$MOUNTPOINT" -maxdepth 1 -iname "Eclipse.app" | head -n 1)
+      if [ -z "$APPSRC" ]; then
+        echo "ERROR: could not find Eclipse.app inside mounted image $PACKAGE"
+        hdiutil detach "$MOUNTPOINT" -quiet || true
+        exit 1
+      fi
+      cp -R "$APPSRC" "$LOCATION/Eclipse.app"
+      hdiutil detach "$MOUNTPOINT" -quiet
+      rmdir "$MOUNTPOINT"
+      ;;
+  esac
   ls -al "$LOCATION"
   echo "Extraction Completed, now configuration..."
 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.ui 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.debug.ui 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.junit 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group 
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.ui
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.debug.ui
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.junit
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group
   "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.pde.feature.group
 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.headless.feature.feature.group 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.feature.feature.group 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy40.feature.feature.group    
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy30.feature.feature.group 
-  
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.headless.feature.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.feature.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy40.feature.feature.group
+  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy30.feature.feature.group
+
 else
-	echo "$LOCATION exists"
+    echo "$LOCATION exists"
 fi
 
 echo "Build Plugin..."
@@ -99,15 +133,12 @@ mkdir -p "$TEMP_WORKSPACE"
 ECLIPSE_HOME=$LOCATION
 PROJECT_DIR=$SCRIPT_DIR"/"
 OUTPUT_DIR="$PROJECT_DIR/build_output"
-# Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
 RELEASEDIR=release
 rm -rf "$SCRIPT_DIR/$RELEASEDIR"
 mkdir -p "$SCRIPT_DIR/$RELEASEDIR"
 
-
-# Create a temporary build properties file
 TEMP_BUILD_PROPS="$TEMP_WORKSPACE/build.properties"
 PLUGIN_ID=com.commonwealthrobotics
 echo "BUilding plugin $PLUGIN_ID"
@@ -133,54 +164,6 @@ plugin.destination=${OUTPUT_DIR}
 EOF
 cat $TEMP_BUILD_PROPS
 
-#MAKEPLUGIN="\"$MYECLIPSE\" -nosplash  -application org.eclipse.ant.core.antRunner -data \"$TEMP_WORKSPACE\" -debug  -buildfile build.xml   -Declipse.home=\"$LOCATION\"   -Declipse.pdebuild.scripts=\"$LOCATION\"/plugins/org.eclipse.pde.build_3.12.300.v20240212-0530/scripts   -Declipse.launcher=\"$LOCATION\"/plugins/org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar"
-#echo $MAKEPLUGIN
-#eval "$MAKEPLUGIN"
-
-#mkdir -p "$PROJECT_DIR/plugins/com.commonwealthrobotics"
-
-# Run PDE Build and capture output
-# Run PDE Build and capture output
-#	BUILD_OUTPUT=$("$ECLIPSE_HOME/eclipsec" -nosplash -application org.eclipse.pde.build.Build \
-#	  -data "$TEMP_WORKSPACE" \
-#	  -configuration "$TEMP_WORKSPACE/configuration" \
-#	  -buildfile "$ECLIPSE_HOME/plugins/org.eclipse.pde.build_3.12.300.v20240212-0530/scripts/build.xml" \
-#	  -Dbuilder="$PROJECT_DIR" \
-#	  -DbaseLocation="$ECLIPSE_HOME" \
-#	  -DbuildDirectory="$PROJECT_DIR" \
-#	  -Dbase="$ECLIPSE_HOME" \
-#	  -DpluginPath="$ECLIPSE_HOME/plugins" \
-#	  -DoutputDirectory="$OUTPUT_DIR" \
-#	  -DskipBase=true \
-#	  -DskipMaps=true \
-#	  -DskipFetch=true \
-#	  -DbuildProperties="$TEMP_BUILD_PROPS" \
-#	  -Dgenerate.p2.metadata=true \
-#	  -Dp2.metadata.repo="file:$OUTPUT_DIR/repository" \
-#	  -Dp2.artifact.repo="file:$OUTPUT_DIR/repository" \
-#	  -Dp2.compress=true \
-#	  -Dp2.gathering=true \
-#	  -debug \
-#	  -verbose)
-	
-	
-#	echo "Build completed. Checking output directory..."
-	
-	# Check for files in the output directory
-#	echo "Contents of $OUTPUT_DIR:"
-#	find "$OUTPUT_DIR" -type f
-#	echo "Searching for recently created JAR files in the project directory..."
-#	find "$PROJECT_DIR" -name "*.jar" -mmin -10 -type f
-#	
-	# Print build output
-#	echo "Build Output:"
-#	echo "$BUILD_OUTPUT"
-	
-#	echo "Searching for clues in build output..."
-#	echo "$BUILD_OUTPUT" | grep -i "jar"
-#	echo "$BUILD_OUTPUT" | grep -i "output"
-#	echo "$BUILD_OUTPUT" | grep -i "created"
-#	echo "$BUILD_OUTPUT" | grep -i "generating"
 case "${TYPE}" in
     Windows*)       MKPKG="cp -r ./plugin-out/dropins/* \"$LOCATION/dropins/\" ";;
     Mac*)          MKPKG="cp -r ./plugin-out/dropins/* \"$LOCATION/Eclipse.app/Contents/Eclipse/dropins/\"";;
@@ -198,6 +181,5 @@ echo "$MKPKG"
 eval "$MKPKG"
 ls -al .
 ls -al "$SCRIPT_DIR/$RELEASEDIR"
-
 
 echo "Clean exit after building $NAME-$TYPE"
