@@ -101,28 +101,45 @@ if ! test -d "$LOCATION"; then
       ;;
   esac
   ls -al "$LOCATION"
-  echo "Extraction Completed, now configuration..."
+echo "Installing Eclipse components..."
 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.platform.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.core.manipulation
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.ui
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.debug.ui
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.junit
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ui.browser
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.ant.core
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.jdt.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $ECLIPSEUPDATE -installIU org.eclipse.pde.feature.group
+install_iu() {
+    local repository="$1"
+    local iu="$2"
 
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.astviews
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.jdt.patch.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.compilerless.feature.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.headless.feature.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse.feature.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy.eclipse
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy40.feature.feature.group
-  "$MYECLIPSE"  -nosplash -application org.eclipse.equinox.p2.director -repository $GROOVYVERSION -installIU org.codehaus.groovy30.feature.feature.group
+    echo "  Installing: $iu"
 
+    "$MYECLIPSE" -nosplash \
+        -application org.eclipse.equinox.p2.director \
+        -repository "$repository" \
+        -installIU "$iu" \
+        >/dev/null
+}
+
+# Eclipse platform/JDT/PDE components
+install_iu "$ECLIPSEUPDATE" org.eclipse.platform.feature.group
+install_iu "$ECLIPSEUPDATE" org.eclipse.jdt.core.manipulation
+install_iu "$ECLIPSEUPDATE" org.eclipse.jdt.ui
+install_iu "$ECLIPSEUPDATE" org.eclipse.jdt.debug.ui
+install_iu "$ECLIPSEUPDATE" org.eclipse.jdt.junit
+install_iu "$ECLIPSEUPDATE" org.eclipse.ui.browser
+install_iu "$ECLIPSEUPDATE" org.eclipse.ant.core
+install_iu "$ECLIPSEUPDATE" org.eclipse.jdt.feature.group
+install_iu "$ECLIPSEUPDATE" org.eclipse.pde.feature.group
+
+echo "Installing Groovy-Eclipse components..."
+
+install_iu "$GROOVYVERSION" org.codehaus.groovy.eclipse.astviews
+install_iu "$GROOVYVERSION" org.codehaus.groovy.jdt.patch.feature.group
+install_iu "$GROOVYVERSION" org.codehaus.groovy.compilerless.feature.feature.group
+install_iu "$GROOVYVERSION" org.codehaus.groovy.headless.feature.feature.group
+install_iu "$GROOVYVERSION" org.codehaus.groovy.eclipse.feature.feature.group
+install_iu "$GROOVYVERSION" org.codehaus.groovy.eclipse
+install_iu "$GROOVYVERSION" org.codehaus.groovy
+install_iu "$GROOVYVERSION" org.codehaus.groovy40.feature.feature.group
+install_iu "$GROOVYVERSION" org.codehaus.groovy30.feature.feature.group
+
+echo "Eclipse installation completed."
 else
     echo "$LOCATION exists"
 fi
