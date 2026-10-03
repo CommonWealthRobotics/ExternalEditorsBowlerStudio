@@ -23,7 +23,7 @@
 			  "ospath":"/Applications/",
 			  "name":"Inkscape-1.3.2_x86_64",
 			  "executable":"Inkscape.app",
-			  "configExecutable":"Inkscape.app"
+			  "configExecutable":"Inkscape.app/Contents/MacOS/inkscape"
 			  },
 "Mac-aarch64":{
 				"url":"https://inkscape.org/gallery/item/44624/"
@@ -32,7 +32,7 @@
 			  "ospath":"/Applications/",
 			  "name":"Inkscape-1.3.2_arm64",
 			  "executable":"Inkscape.app",
-			  "configExecutable":"Inkscape.app"
+			  "configExecutable":"Inkscape.app/Contents/MacOS/inkscape"
 			  }			  
 
 }
