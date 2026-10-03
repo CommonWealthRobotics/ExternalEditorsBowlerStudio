@@ -11,8 +11,8 @@
     "url" : "https://github.com/jdegenstein/cadoodle-build123d-portable/releases/download/v0.0.9/",
     "type" : "sfx",
     "name" : "cadoodle-b123d_v0.0.9-windows-x86_64",
-    "executable" : "cadoodle-b123d_v0.0.9\\py\\python",
-    "configExecutable" : "cadoodle-b123d_v0.0.9\\py\\python",
+    "executable" : "cadoodle-b123d_v0.0.9\\py\\python.exe",
+    "configExecutable" : "cadoodle-b123d_v0.0.9\\py\\python.exe",
     "version":"0.0.9"
   },
   "Mac-aarch64" : {
